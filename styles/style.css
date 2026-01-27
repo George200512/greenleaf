@@ -119,9 +119,8 @@ header{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: yellow;
-  border: 0.7rem solid blue;
 }
+
 .day{
   background: var(--primary-color);
   color: white;
@@ -130,11 +129,12 @@ header{
   margin-left: 0.6rem;
 }
 
-.bi-x{
+.close-btn{
   font-size: 2rem;
   background: black;
   border-radius: 50%;
   color: white;
+  align-self: flex-end;
 }
 
 .bi-x:active{
