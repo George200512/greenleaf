@@ -53,7 +53,7 @@ header{
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  z-index: 1;
+  font-size: 1rem;
 }
 
 .offline{
@@ -94,7 +94,7 @@ header{
 
 .quote-container{
   align-self: center;
-  margin-top: 2rem;
+  margin: 2rem 1rem;;
   background: white;
   padding: 1.5rem;
   border-radius: 2rem;
@@ -102,16 +102,26 @@ header{
   display: none;
   flex-direction: column;
   gap: 1.5rem;
+  align-items: flex-start;
 }
 
-.heading{
+.h-1{
   display: flex;
   flex-direction: row;
   align-items: center;
   font-weight: bold;
   text-align: center;
+  align-self: center;
 }
 
+.heading{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: yellow;
+  border: 0.7rem solid blue;
+}
 .day{
   background: var(--primary-color);
   color: white;
@@ -121,7 +131,6 @@ header{
 }
 
 .bi-x{
-  transform: translate(2rem, -2rem);
   font-size: 2rem;
   background: black;
   border-radius: 50%;
