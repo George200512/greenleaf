@@ -1,10 +1,11 @@
 $(document).ready(function (event){
-	 const default_quote = {
+	/* const default_quote = {
 	 		_id: "12221",
 	 		content: "The best way to get started is to quit talking and start doing.",
 	 		author: "Walt Disney"
 	 }
 		localStorage.setItem("quote", JSON.stringify(default_quote));
+		*/
 		
 		if (navigator.onLine){
 				$(".online").css("display", "flex").slideDown(300);
@@ -24,8 +25,8 @@ $(document).ready(function (event){
 				if (navigator.onLine){
 						console.log("true");
 						let quote = await getQuote();
-						$(".quote").text(quote.text);
-						$(".author").text(quote.author);
+						$(".quote").text(quote.q);
+						$(".author").text(quote.a);
 						localStorage.setItem("quote", JSON.stringify(quote));
 				}else{
 						let quote = JSON.parse(localStorage.getItem("quote"));
@@ -45,7 +46,7 @@ $(document).ready(function (event){
 async function getQuote(){
 		/* Get quote from internet using api. */
 		
-	 let response = await fetch("https://type.fit/api/quotes");
+	 let response = await fetch("https://zenquotes.io/api/random");
 		let data = await response.json();
-		return data[Math.ceil(Math.random() * data.length)];
+		return data[0];
 }
