@@ -22,8 +22,9 @@ $(document).ready(function (event){
 				event.preventDefault();
 				$(".quote-container").css("display", "flex");
 				if (navigator.onLine){
+						console.log("true");
 						let quote = await getQuote();
-						$(".quote").text(quote.content);
+						$(".quote").text(quote.text);
 						$(".author").text(quote.author);
 						localStorage.setItem("quote", JSON.stringify(quote));
 				}else{
@@ -44,7 +45,7 @@ $(document).ready(function (event){
 async function getQuote(){
 		/* Get quote from internet using api. */
 		
-	 let response = await fetch("https://api.quotable.io/quotes/random");
+	 let response = await fetch("https://type.fit/api/quotes");
 		let data = await response.json();
-		 return data[0];
+		return data[Math.ceil(Math.random() * data.length)];
 }
