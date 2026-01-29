@@ -46,7 +46,7 @@ $(document).ready(function (event){
 async function getQuote(){
 		/* Get quote from internet using api. */
 		
-	 let response = await fetch("https://zenquotes.io/api/random");
+	 let response = await fetch("https://cors-anywhere.herokuapp.com/https://zenquotes.io/api/random");
 		let data = await response.json();
 		return data[0];
 }
